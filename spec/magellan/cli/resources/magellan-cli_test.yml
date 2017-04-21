@@ -1,0 +1,25 @@
+---
+last_update_searched_at: '2015-02-05 11:29:45 +0900'
+login:
+  email: test1@groovenauts.jp
+  token: SyPdUbwSdEZQ-gNbf6L7
+magellan_auth_organization:
+  id: 3
+  name: test2
+project:
+  id: 3
+  name: Project1
+client_version:
+  id: 4
+  version: Stage2
+stage_title:
+  id: 3
+  name: Stage1
+stage_version:
+  id: 8
+functions_worker:
+  id: 3
+  name: worker1
+container_image:
+  id: 9
+  name: groovenauts/magellan-rails-example-0.4.4

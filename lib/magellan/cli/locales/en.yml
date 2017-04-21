@@ -1,0 +1,174 @@
+en:
+  base:
+    notification:
+      config_file: |
+        ******* magellan-cli configuration file ******
+        magellan-cli stores login information, resources selection information into
+        a configuration file. The file path of the configuration file is usually
+        ${HOME}/.config/magellan/magellan-cli
+        You can specify your own configuration file path by setting environment variable
+        MAGELLAN_CLI_CONFIG_FILE.
+
+        !! migration from 0.4.0 and before !!
+        magellan-cli 0.4.0 and before saves configuration file into `.magellan-cli'
+        in current directory.
+        To migrate onfigurations from magellan-0.4.0 and before, move `.magellan-cli'
+        file in the working directory to ${HOME}/.config/magellan/magellan-cli or
+        ${MAGELLAN_CLI_CONFIG_FILE}.
+    cmd:
+      help: "Describe available commands or one specific command"
+    class_option:
+      version: "Show the program version"
+      verbose: "Show additional logging information"
+      dryrun: "Do a dry run without executing actions"
+  command:
+    cmd:
+      manage_resource: "Manage %{resource}"
+      login: "Login to the Magellan server"
+      info: "Show login user and selected resources"
+      messaging:
+        http: "Send messages by using HTTP"
+        mqtt: "Publish and get messages by using MQTT"
+    cmd_login:
+      email: "email address for login"
+      password: "password for login"
+      authentication_token: "authentication token for login"
+    cmd_help:
+      for_more_detail: "type `%{command} help RESOURCE` for more detail"
+  file_access:
+    load_selection:
+      not_selected: "No %{label} selected"
+  http:
+    login:
+      success: "Logged in"
+      error: "Login failure"
+    access_api:
+      ok: "OK"
+    token:
+      success: "Authorized"
+      error: "Unauthorized"
+  login:
+    check_login_auth:
+      not_logged_in: "Not logined yet. type `%{command} login`."
+    warning: "Please refer to the password empty if you want to login with authentication token."
+  messaging:
+    http:
+      ping: "Send a HTTP request to check connection"
+      get: "Send a HTTP request with GET method"
+      delete: "Send a HTTP request with DELETE method"
+      post: "Send a HTTP request with POST method"
+      put: "Send a HTTP request with PUT method"
+      patch: "Send a HTTP request with PATCH method"
+      common_options:
+        headers: "JSON style string or .yml or .json file path which has content"
+        body: "String or file path which has body"
+    mqtt:
+      pub: "Publish a message with a topic"
+      get: "Get a message"
+  reference:
+    commands: "Commands"
+    global_options: "Global Options"
+    details: "Details"
+  resources:
+    base:
+      default_query:
+        not_selected: "No %{label} selected"
+      get_first_result:
+        not_found: "%{resource_name} not found for %{name}"
+    common:
+      cmd:
+        create: "Create a new %{resource_name} with NAME"
+        delete: "Delete the %{resource_name} specified by NAME"
+        update: "Update the ATTRIBUTES of the selected %{resource_name}"
+        list: "Show a list of the %{res_names}"
+        show: "Show the detail of the %{res_name} specified by ID"
+        select: "Select the %{res_name} by NAME"
+        deselect: "Deselect the %{res_name}"
+    authority:
+      cmd:
+        select: "Select the %{resource_name} by ID"
+        delete: "Delete the %{resource_name} specified by ID"
+        create: "Create a new %{resource_name} with PROJECT_ROLE STAGE_ROLE STAGE_TYPE"
+    client_version:
+      cmd:
+        select: "Select the %{resource_name} by VERSION"
+        create: "Create a new %{resource_name} with VERSION"
+        update: "Update the ATTRIBUTES(filename or JSON) of the selected %{resource_name}"
+        delete: "Delete the %{resource_name} specified by VERSION"
+      cmd_create:
+        domain: "Domain name for HTTP access without OAuth"
+    stage:
+      cmd:
+        create: "Create a new %{resource_name} with Name and Type"
+        planning: "Switch to planning to build next released version"
+        current: "Switch to current released version"
+        prepare: "Prepare the %{containers_name}"
+        repair: "Repair the %{resource_name} status"
+        release_now: "Release the changes now"
+        logs: "Fetch the logs of the %{workers_name}"
+        set_container_num: "Set the number of %{containers_name} for the selected %{image_name}"
+        reload: "Reload the last selections"
+      cmd_create:
+        type: "-t development|staging|production specify Stage Type"
+        size: "-s micro|standard specify Stage Size"
+      cmd_release_now:
+        async: "-A async mode. release_now returns soon"
+        interval: "-i polling interval(seconds)"
+        timeout: "-t timeout(seconds)"
+    cloudsql:
+      cmd_create:
+        async: "-A async mode. release_now returns soon"
+        interval: "-i polling interval(seconds)"
+        timeout: "-t timeout(seconds)"
+    cloudsql_instance:
+      cmd:
+        create: "Create a new %{resource_name} by INSTANCE"
+        delete: "Delete the %{resource_name} by INSTANCE"
+        list: "Show list of the %{resource_name}"
+      cmd_create:
+        tier: "Tier of Cloud SQL instance. see also https://cloud.google.com/sql/pricing"
+        region: "Region where the Cloud SQL instance works"
+        activation-policy: "The activation policy for this instance. This specifies when the instance should be activated and is applicable only when the instance state is RUNNABLE."
+        skip-assign-ip: "Specified unless the instance must be assigned an IP address."
+        authorized-networks: "The list of external networks that are allowed to connect to the instance. Specified in CIDR notation, also known as 'slash' notation (e.g. 192.168.100.0/24)."
+        gce-zone: "The preferred Compute Engine zone (e.g. us-central1-a, us-central1-b, etc.)."
+        pricing-plan: "The pricing plan for this instance."
+        password: "The password for the root user."
+        account: "Google Cloud Platform user account to use for invocation."
+        log-http: "Log all HTTP server requests and responses to stderr."
+        project: "Google Cloud Platform project ID to use for this invocation."
+        trace-token: "Token used to route traces of service requests for investigation of issues."
+        user-output-enabled: "Print user intended output to the console."
+        verbosity: "Override the default verbosity for this command.  This must be a standard logging verbosity level: [debug, info, warning, error, critical, none] (Default: [warning])."
+        aync: "Ignored even if it's given."
+        format: "Ignored even if it's given."
+        env_head: |
+          Set the following text to "Environment Variables" of your worker to access the database from your worker.
+          --------------------------------------------------
+        env_body: |
+          MYSQL_HOST: %{mysql_host}
+          MYSQL_PORT: %{mysql_port}
+          MYSQL_DATABASE: %{mysql_database}
+          MYSQL_USERNAME: %{mysql_username}
+          MYSQL_PASSWORD: %{mysql_password}
+        env_tail: |
+          --------------------------------------------------
+          (Modify the value for MYSQL_DATABASE if you need)
+          You need to use environment variables to get connection configurations like this: https://github.com/tengine/magellan-rails-example/blob/master/config/database.yml
+      messages:
+        starting_launch: "Now launching Cloud SQL instance. It will take a few minutes."
+        gcloud_not_found: |
+          gcloud command not found. Install Google Cloud SDK to use
+          magellan-cli cloudsql-instance command.
+          For more information see https://cloud.google.com/sdk/
+    team:
+      cmd:
+        create: "Create a new %{resource_name} with NAME and ROLE"
+        invite: "Invite a user to the %{resource_name}"
+    worker:
+      cmd:
+        create: "Create a new %{resource_name} with NAME and IMAGE"
+        update: "Update the ATTRIBUTES(filename or JSON) of the selected %{resource_name}"
+        prepare_images: "Prepare the %{images_name} for the selected %{worker_name}"
+      cmd_create:
+        attributes_yaml: "path to YAML file which defines attributes"

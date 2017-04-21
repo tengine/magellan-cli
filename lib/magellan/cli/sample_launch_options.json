@@ -1,0 +1,7 @@
+{
+    "machine_type": "n1-standard-1",
+    "image": "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/backports-debian-7-wheezy-v20140718",
+    "zone": "asia-east1-a",
+    "network": "magellan-staging",
+    "ansible_python_interpreter": "/usr/bin/env python"
+}

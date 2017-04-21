@@ -1,0 +1,29 @@
+app:
+  before_tasks:
+    - name: "stop app container"
+      command: docker stop app
+      ignore_errors: yes
+    - name: "remove app container"
+      command: docker rm app
+      ignore_errors: yes
+
+    - name: "make application log directory"
+      file:
+        path: /var/log/application
+        force: yes
+        state: directory
+
+  image: groovenauts/magellan-rails-example:0.0.3
+  # Dockerfile: "./Dockerfile"
+  links:
+    - rabbitmq:rabbitmq
+  env:
+    - VHOST=/groovenauts.app1
+    - REQUEST_QUEUE=groovenauts.app1.0.0.1.rails
+    - RESPONSE_EXCHANGE=groovenauts.app1.reply
+    - RABBITMQ_USER=groovenauts.app1
+    - RABBITMQ_PASS=workerpw
+    - SECRET_KEY_BASE={{ app_secret_key_base }}
+  volumes:
+    - /var/log/application:/usr/src/app/log
+  command: bundle exec magellan-rails

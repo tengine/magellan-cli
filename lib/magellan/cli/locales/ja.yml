@@ -1,0 +1,173 @@
+ja:
+  base:
+    notification:
+      config_file: |
+        ******* magellan-cli の設定ファイル ******
+        magellan-cli はログイン情報、リソースの選択状態などの情報を設定ファイルに保存します。
+        設定ファイルのファイルパスは ${HOME}/.config/magellan/magellan-cli が用いられます。
+        設定ファイルのファイルパスは環境変数 MAGELLAN_CLI_CONFIG_FILE で指定可能です。
+
+        !! 0.4.0 からの移行について !!
+        magellan-cli 0.4.0 までは設定ファイルとしてカレントディレクトリに .magellan-cli ファイルを
+        作成していました。
+        0.4.0 以前のバージョンからの移行のためには、作業ディレクトリ内の .magellan-cli ファイルを
+        ${HOME}/.config/magellan/magellan-cli もしくは環境変数 MAGELLAN_CLI_CONFIG_FILE で指定する
+        パスへ移動してください。
+    cmd:
+      help: "利用可能なコマンドの一覧か特定のコマンドの説明を表示します"
+    class_option:
+      version: "バージョンを表示します"
+      verbose: "追加のログ情報を表示します"
+      dryrun: "登録や削除などのシステムには反映させずにアクションを実行します"
+  command:
+    cmd:
+      manage_resource: "%{resource}を操作します"
+      login: "MAGELLANのサーバにログインします"
+      info: "ログイン情報と選択されているリソースを表示します"
+      messaging:
+        http: "HTTPを使ってメッセージを送信します"
+        mqtt: "MQTTを使ってメッセージを送受信します"
+    cmd_login:
+      email: "ログインするアカウントのメールアドレス"
+      password: "ログインするアカウントのパスワード"
+      authentication_token: "ログインするアカウントの認証トークン"
+    cmd_help:
+      for_more_detail: "詳しくは `%{command} help RESOURCE` を実行してください"
+  file_access:
+    load_selection:
+      not_selected: "%{label}が選択されていません"
+  http:
+    login:
+      success: "ログインしました"
+      error: "ログインに失敗しました"
+    access_api:
+      ok: "OK"
+    token:
+      success: "認証しました"
+      error: "認証に失敗しました"
+  login:
+    check_login_auth:
+      not_logged_in: "ログインしていません。`%{command} login` を実行してログインしてください"
+    warning: "認証トークンでログインする場合はパスワードを空にしてください"
+  messaging:
+    http:
+      ping: "接続確認のリクエストを送信します"
+      get: "GETメソッドを使ってHTTPリクエストを送信します"
+      delete: "DELETEメソッドを使ってHTTPリクエストを送信します"
+      post: "POSTメソッドを使ってHTTPリクエストを送信します"
+      put: "PUTメソッドを使ってHTTPリクエストを送信します"
+      patch: "PATCHメソッドを使ってHTTPリクエストを送信します"
+      common_options:
+        headers: "JSON形式の文字列か、拡張子が.ymlのYAML形式のファイルへのパス、あるいは拡張子が.jsonのJSON形式のファイルへのパス"
+        body: "内容を表す文字列か、内容を保持するファイルへのパス"
+    mqtt:
+      pub: "TOPICを指定してメッセージを配信します"
+      get: "メッセージを取得します"
+  reference:
+    commands: "コマンドの一覧"
+    global_options: "共通オプション"
+    details: "コマンドの詳細"
+  resources:
+    base:
+      default_query:
+        not_selected: "%{label}が選択されていません"
+      get_first_result:
+        not_found: "%{name}という%{resource_name}は見つかりませんでした"
+    common:
+      cmd:
+        create: "NAMEを指定して%{resource_name}を登録します"
+        delete: "NAMEを指定して%{resource_name}を削除します"
+        update: "選択した%{resource_name}の属性を指定したATTRIBUTESで更新します"
+        list: "%{res_names} の一覧を表示します"
+        show: "IDで指定された%{res_name}の詳細を表示します"
+        select: "NAMEを指定して%{res_name}を選択します"
+        deselect: "%{res_name}の選択を解除します"
+    authority:
+      cmd:
+        select: "ID を指定して%{resource_name}を選択します"
+        delete: "ID を指定して%{resource_name}を削除します"
+        create: "PROJECT_ROLE STAGE_ROLE STAGE_TYPE を指定して%{resource_name}を登録します"
+    client_version:
+      cmd:
+        select: "VERSIONを指定して%{resource_name}を選択します"
+        create: "VERSIONを指定して%{resource_name}を登録します"
+        update: "選択した%{resource_name}の属性を指定したATTRIBUTESで更新します。ATTRIBUTESにはYAMLのファイル名かJSON文字列を指定可能です"
+        delete: "VERSIONを指定して%{resource_name}を削除します"
+      cmd_create:
+        domain: "OAuth認証を行わずHTTPアクセスする際のアクセス先となるドメイン名"
+    stage:
+      cmd:
+        create: "NAMEとTYPEを指定して%{resource_name}を登録します"
+        planning: "次回リリースのステージの計画に切り替えます"
+        current: "現在リリースされているステージの情報に切り替えます"
+        prepare: "%{containers_name}を準備します"
+        repair: "%{resource_name}の状態を修正します"
+        release_now: "すぐにリリースを開始します"
+        logs: "%{workers_name}のログを表示します"
+        set_container_num: "選択された%{image_name}の%{containers_name}の数を設定します"
+        reload: "最後にselectされたものをロードし直します"
+      cmd_create:
+        type: "-t development|staging|production いずれかのTYPEを指定してください"
+        size: "-s micro|standard いずれかのSIZEを指定してください"
+      cmd_release_now:
+        async: "-A 非同期モード。リリースの終了を待たずにコマンドを終了します"
+        interval: "-i 状態を取得する間隔を秒で指定します"
+        timeout: "-t タイムアウトを秒で指定します"
+    cloudsql:
+      cmd_create:
+        async: "-A 非同期モード。リリースの終了を待たずにコマンドを終了します"
+        interval: "-i 状態を取得する間隔を秒で指定します"
+        timeout: "-t タイムアウトを秒で指定します"
+    cloudsql_instance:
+      cmd:
+        create: "INSTANCEを指定して%{resource_name}を登録します"
+        delete: "INSTANCEを指定して%{resource_name}を削除します"
+        list: "%{resource_name}の一覧を表示します"
+      cmd_create:
+        # それぞれの訳はDevelopers Consoleのものを使っています
+        tier: "Cloud SQLのインスタンスの階層。詳しくは https://cloud.google.com/sql/pricing を参照してください。"
+        region: "Cloud SQLのインスタンスを動かす地域"
+        activation-policy: "Cloud SQLのインスタンスを有効にするポリシー"
+        skip-assign-ip: "IPv4 アドレスを割り当てない"
+        authorized-networks: "承認済みネットワーク"
+        gce-zone: "希望する場所"
+        pricing-plan: "料金プラン"
+        password: "Cloud SQLのrootユーザのパスワード"
+        account: "GCPユーザアカウント"
+        log-http: "全てのHTTPのリクエストとレスポンスを標準エラー出力に出力します"
+        project: "GCPプロジェクト"
+        trace-token: "トレーストークン"
+        user-output-enabled: "コンソールにユーザを出力します"
+        verbosity: "ログレベル"
+        async: "指定しても無視されます"
+        format: "指定しても無視されます"
+        env_head: |
+          起動したDBにWorkerから接続するためには、下記の設定を起動するWorkerの"Environment Variables"に設定してください
+          --------------------------------------------------
+        env_body: |
+          MYSQL_HOST: %{mysql_host}
+          MYSQL_PORT: %{mysql_port}
+          MYSQL_DATABASE: %{mysql_database}
+          MYSQL_USERNAME: %{mysql_username}
+          MYSQL_PASSWORD: %{mysql_password}
+        env_tail: |
+          --------------------------------------------------
+          (MYSQL_DATABASEの値は必要に応じて変更してください)
+          Workerには予め https://github.com/tengine/magellan-rails-example/blob/master/config/database.yml のように環境変数から接続先を取得する設定が必要です。
+      messages:
+        starting_launch: "Cloud SQLのインスタンスを起動しています。数分かかりますのでお待ち下さい。"
+        gcloud_not_found: |
+          gcloudコマンドが見つかりませんでした。
+          ご利用になるためにはGoogle Cloud SDKをインストールして頂く必要があります。
+          詳しくはこちらをご覧ください。 https://cloud.google.com/sdk/
+    team:
+      cmd:
+        create: "NAMEとROLEを指定して%{resource_name}を登録します"
+        invite: "%{resource_name}にユーザを招待します"
+    worker:
+      cmd:
+        create: "NAMEとIMAGEを指定して%{resource_name}を登録します"
+        update: "選択した%{resource_name}の属性を指定したATTRIBUTESで更新します。ATTRIBUTESにはYAMLのファイル名かJSON文字列を指定可能です"
+        prepare_images: "選択された%{worker_name}の%{images_name}を準備します"
+      cmd_create:
+        attributes_yaml: "属性を定義するYAMLファイルへのパス"

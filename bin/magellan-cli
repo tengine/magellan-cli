@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'magellan/cli'
+
+Magellan::Cli::Command.start(ARGV)

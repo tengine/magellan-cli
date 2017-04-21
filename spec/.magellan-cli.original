@@ -1,0 +1,7 @@
+---
+magellan_auth_organization:
+  id: 1
+  name: org1
+magellan_auth_team:
+  id: 1
+  name: team1
