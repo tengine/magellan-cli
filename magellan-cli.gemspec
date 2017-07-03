@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "httpclient", "~> 2.5"
   spec.add_runtime_dependency "groovenauts-thor"
   spec.add_runtime_dependency "nokogiri"
-  spec.add_runtime_dependency "activesupport", "~> 4.1.4"
+  spec.add_runtime_dependency "activesupport"
   spec.add_runtime_dependency "text-table", "~> 1.2.3"
   spec.add_runtime_dependency "i18n"
   spec.add_runtime_dependency "psych", ">= 2.0.0", "<= 2.0.8"
