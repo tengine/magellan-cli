@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    magellan-cli (0.9.1)
-      activesupport (~> 4.1.4)
+    magellan-cli (0.10.0)
+      activesupport
       groovenauts-thor
       httpclient (~> 2.5)
       i18n
@@ -117,4 +117,4 @@ DEPENDENCIES
   simplecov-rcov
 
 BUNDLED WITH
-   1.10.6
+   1.14.6

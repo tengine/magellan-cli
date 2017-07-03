@@ -1,7 +1,7 @@
 ---
 layout: index
-title: container | magellan-cli-0.9 (en) | Reference
-breadcrumb: <a href="/">Top</a> / <a href="/reference">Reference</a> / <a href="/reference/magellan-cli/en">magellan-cli-0.9</a> / container en <a href="/reference/ja/resources/container.html">ja</a>
+title: container | magellan-cli-0.10 (en) | Reference
+breadcrumb: <a href="/">Top</a> / <a href="/reference">Reference</a> / <a href="/reference/magellan-cli/en">magellan-cli-0.10</a> / container en <a href="/reference/ja/resources/container.html">ja</a>
 sidemenu: sidemenu/reference/magellan-cli/sidemenu-en
 ---
 

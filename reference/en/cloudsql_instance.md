@@ -1,7 +1,7 @@
 ---
 layout: index
-title: cloudsql_instance | magellan-cli-0.9 (en) | Reference
-breadcrumb: <a href="/">Top</a> / <a href="/reference">Reference</a> / <a href="/reference/magellan-cli/en">magellan-cli-0.9</a> / cloudsql_instance en <a href="/reference/ja/cloudsql_instance.html">ja</a>
+title: cloudsql_instance | magellan-cli-0.10 (en) | Reference
+breadcrumb: <a href="/">Top</a> / <a href="/reference">Reference</a> / <a href="/reference/magellan-cli/en">magellan-cli-0.10</a> / cloudsql_instance en <a href="/reference/ja/cloudsql_instance.html">ja</a>
 sidemenu: sidemenu/reference/magellan-cli/sidemenu-en
 ---
 

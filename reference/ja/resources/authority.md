@@ -1,7 +1,7 @@
 ---
 layout: index
-title: authority | magellan-cli-0.9 (ja) | Reference
-breadcrumb: <a href="/">Top</a> / <a href="/reference">Reference</a> / <a href="/reference/magellan-cli/ja">magellan-cli-0.9</a> / authority <a href="/reference/en/resources/authority.html">en</a> ja
+title: authority | magellan-cli-0.10 (ja) | Reference
+breadcrumb: <a href="/">Top</a> / <a href="/reference">Reference</a> / <a href="/reference/magellan-cli/ja">magellan-cli-0.10</a> / authority <a href="/reference/en/resources/authority.html">en</a> ja
 sidemenu: sidemenu/reference/magellan-cli/sidemenu-ja
 ---
 
