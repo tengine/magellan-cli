@@ -38,7 +38,7 @@ module Magellan
               "stage_size" => size,
             }
           }
-          post_json("/admin/#{resource_key}/new.json", params)
+          post_json("/admin/#{resource_key}/new.js", params)
           select(name)
         end
 
@@ -116,7 +116,7 @@ module Magellan
         def update(attrs)
           s = load_selection!(self.class)
           attrs = JSON.parse(File.readable?(attrs) ? File.read(attrs) : attrs)
-          put_json("/admin/stage~title/#{s['id']}/edit.json", {"stage_title" => attrs})
+          put_json("/admin/stage~title/#{s['id']}/edit.js", {"stage_title" => attrs})
         end
 
         desc "release_now", I18n.t(:release_now, scope: [:resources, :stage, :cmd])

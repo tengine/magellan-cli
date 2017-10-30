@@ -24,7 +24,7 @@ module Magellan
               "name" => name,
             }
           }
-          res0 = post_json("/admin/#{resource_key}/new.json", params)
+          res0 = post_json("/admin/#{resource_key}/new.js", params)
           select(name)
 
           return res0 if options["A"]

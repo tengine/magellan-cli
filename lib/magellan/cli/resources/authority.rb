@@ -29,7 +29,7 @@ module Magellan
         def update(attrs)
           s = load_selection!(self.class)
           attrs = JSON.parse(File.readable?(attrs) ? File.read(attrs) : attrs)
-          put_json("/admin/#{resource_key}/#{s['id']}/edit.json", {"magellan_auth_authority" => attrs})
+          put_json("/admin/#{resource_key}/#{s['id']}/edit.js", {"magellan_auth_authority" => attrs})
         end
 
         desc "create PROJECT_ROLE STAGE_ROLE STAGE_TYPE", I18n.t(:create, scope: [:resources, :authority, :cmd], resource_name: resource_name)
@@ -61,7 +61,7 @@ module Magellan
               "stage_type" => stage_type_map[stage_type],
             }
           }
-          ret = post_json("/admin/#{resource_key}/new.json", params)
+          ret = post_json("/admin/#{resource_key}/new.js", params)
           if ret and ret["id"]
             select ret["id"]
           end

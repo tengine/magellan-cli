@@ -21,7 +21,7 @@ describe Magellan::Cli::Resources::Organization do
   describe :create do
     let(:organization_list_response) { [ { "id" => 1, "name" => "new1" } ] }
     before do
-      expect(cmd).to receive(:post_json).with("/admin/magellan~auth~organization/new.json", {"magellan_auth_organization" => { "name" => "new1" }})
+      expect(cmd).to receive(:post_json).with("/admin/magellan~auth~organization/new.js", {"magellan_auth_organization" => { "name" => "new1" }})
       allow(cmd).to receive(:get_json).with(any_args).and_return(organization_list_response)
     end
     it do

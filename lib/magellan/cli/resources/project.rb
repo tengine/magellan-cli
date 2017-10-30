@@ -17,7 +17,7 @@ module Magellan
         def update(attrs)
           s = load_selection!(self.class)
           attrs = JSON.parse(File.readable?(attrs) ? File.read(attrs) : attrs)
-          put_json("/admin/project/#{s['id']}/edit.json", {"project" => attrs})
+          put_json("/admin/project/#{s['id']}/edit.js", {"project" => attrs})
         end
 
         desc "create NAME", I18n.t(:create, scope: [:resources, :common, :cmd], resource_name: resource_name)
@@ -29,7 +29,7 @@ module Magellan
               "name" => name,
             }
           }
-          post_json("/admin/#{resource_key}/new.json", params)
+          post_json("/admin/#{resource_key}/new.js", params)
           select(name)
         end
       end

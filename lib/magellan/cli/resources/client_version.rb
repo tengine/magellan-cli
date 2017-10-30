@@ -29,7 +29,7 @@ module Magellan
             attrs["domain"] = d
           end
           params = { parameter_name => attrs }
-          post_json("/admin/#{resource_key}/new.json", params)
+          post_json("/admin/#{resource_key}/new.js", params)
           # TODO implement select method
           # select(version)
         end
@@ -56,7 +56,7 @@ module Magellan
           params = {
             parameter_name => attrs
           }
-          put_json("/admin/#{resource_key}/#{cv["id"]}/edit.json", params)
+          put_json("/admin/#{resource_key}/#{cv["id"]}/edit.js", params)
         end
 
         desc "delete VERSION", I18n.t(:delete, scope: [:resources, :client_version, :cmd], resource_name: resource_name)
