@@ -23,7 +23,7 @@ describe Magellan::Cli::Resources::ClientVersion do
       let(:client_version_list_response) { [ { "id" => 1, "version" => "1.1.0" } ] }
       before do
         allow(cmd).to receive(:load_selections).and_return({Magellan::Cli::Resources::Project.parameter_name => {"id" => 1, "name" => "ProjectA"}, Magellan::Cli::Resources::Stage.parameter_name => {"id" => 1, "name" => "StageA"} })
-        expect(cmd).to receive(:post_json).with("/admin/client_version/new.json", { "client_version" => { "project_id" => 1, "stage_title_id" => 1, "version" => "1.1.0" } })
+        expect(cmd).to receive(:post_json).with("/admin/client_version/new.js", { "client_version" => { "project_id" => 1, "stage_title_id" => 1, "version" => "1.1.0" } })
         # TODO: stub in details
         # expect(cmd).to receive(:get_json).with(any_args).and_return(client_version_list_response)
         # expect(cmd).to receive(:update_selections).with("client_version" => { "id" => 1, "version" => "1.0.0" })
@@ -36,7 +36,7 @@ describe Magellan::Cli::Resources::ClientVersion do
     describe :success_with_domain do
       before do
         allow(cmd).to receive(:load_selections).and_return({Magellan::Cli::Resources::Project.parameter_name => {"id" => 1, "name" => "ProjectA"}, Magellan::Cli::Resources::Stage.parameter_name => {"id" => 1, "name" => "StageA"} })
-        expect(cmd).to receive(:post_json).with("/admin/client_version/new.json", { "client_version" => { "project_id" => 1, "stage_title_id" => 1, "version" => "1.1.0", "domain" => "foo.example.com" } })
+        expect(cmd).to receive(:post_json).with("/admin/client_version/new.js", { "client_version" => { "project_id" => 1, "stage_title_id" => 1, "version" => "1.1.0", "domain" => "foo.example.com" } })
       end
       it do
         cmd.options = {domain: "foo.example.com"}
@@ -69,7 +69,7 @@ describe Magellan::Cli::Resources::ClientVersion do
     describe :success_to_update_domain do
       before do
         allow(cmd).to receive(:load_selections).and_return(selections)
-        expect(cmd).to receive(:put_json).with("/admin/client_version/1/edit.json", { "client_version" => { "domain" => "bar.example.com" } })
+        expect(cmd).to receive(:put_json).with("/admin/client_version/1/edit.js", { "client_version" => { "domain" => "bar.example.com" } })
       end
       it do
         cmd.update('{"domain": "bar.example.com"}')
@@ -85,7 +85,7 @@ describe Magellan::Cli::Resources::ClientVersion do
         allow(cmd).to receive(:load_selections).and_return(selections)
         expect(http_conn).to receive(:get_json).with("/admin/stage~title.json", {"f[name][1][o]"=>"is", "f[name][1][v]"=>st_name, "f[project][2][o]"=>"is", "f[project][2][v]"=>1}).
                               and_return([{"id" => st_id, "name" => st_name}])
-        expect(cmd).to receive(:put_json).with("/admin/client_version/1/edit.json", { "client_version" => { "stage_title_id" => st_id } })
+        expect(cmd).to receive(:put_json).with("/admin/client_version/1/edit.js", { "client_version" => { "stage_title_id" => st_id } })
       end
       it do
         cmd.update('{"stage": "Stage2"}')

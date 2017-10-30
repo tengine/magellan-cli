@@ -40,7 +40,7 @@ describe Magellan::Cli::Resources::Stage do
     let(:organization_list_response) { [ { "id" => 1, "label" => "Stage1" } ] }
     before do
       expect(cmd).to receive(:post_json).
-        with("/admin/stage~title/new.json", {"stage_title" => {"project_id"=>1,"name"=>stage_name, "stage_type"=>"development", "stage_size"=>"standard" }})
+        with("/admin/stage~title/new.js", {"stage_title" => {"project_id"=>1,"name"=>stage_name, "stage_type"=>"development", "stage_size"=>"standard" }})
       allow(cmd).to receive(:get_json).with(any_args).and_return(organization_list_response)
       allow(cmd).to receive(:load_selection!).and_return(proj1_json)
       allow(cmd).to receive(:select).with(stage_name)

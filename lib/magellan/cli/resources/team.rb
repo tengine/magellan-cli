@@ -25,7 +25,7 @@ module Magellan
               "role" => role,
             }
           }
-          post_json("/admin/#{self.resource_key}/new.json", params)
+          post_json("/admin/#{self.resource_key}/new.js", params)
           select(name)
         end
 

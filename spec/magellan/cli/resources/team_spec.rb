@@ -23,7 +23,7 @@ describe Magellan::Cli::Resources::Team do
       let(:team_list_response) { [{"id" => 1, "name" => "team1"}] }
       before do
         allow(cmd).to receive(:load_selections).and_return({ Magellan::Cli::Resources::Organization.parameter_name => {"id" => 1, "name" => "org1"}})
-        expect(cmd).to receive(:post_json).with("/admin/magellan~auth~team/new.json", { "magellan_auth_team" => { "organization_id" => 1, "name" => "team1", "role" => role } })
+        expect(cmd).to receive(:post_json).with("/admin/magellan~auth~team/new.js", { "magellan_auth_team" => { "organization_id" => 1, "name" => "team1", "role" => role } })
         # TODO: stub in details...
         allow(cmd).to receive(:get_json).with(any_args).and_return(team_list_response)
         allow(cmd).to receive(:get_json).with(any_args).and_return(team_list_response)
