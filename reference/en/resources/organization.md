@@ -1,7 +1,7 @@
 ---
 layout: index
-title: organization | magellan-cli-0.10 (en) | Reference
-breadcrumb: <a href="/">Top</a> / <a href="/reference">Reference</a> / <a href="/reference/magellan-cli/en">magellan-cli-0.10</a> / organization en <a href="/reference/ja/resources/organization.html">ja</a>
+title: organization | magellan-cli-0.11 (en) | Reference
+breadcrumb: <a href="/">Top</a> / <a href="/reference">Reference</a> / <a href="/reference/magellan-cli/en">magellan-cli-0.11</a> / organization en <a href="/reference/ja/resources/organization.html">ja</a>
 sidemenu: sidemenu/reference/magellan-cli/sidemenu-en
 ---
 

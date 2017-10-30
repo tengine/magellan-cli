@@ -1,7 +1,7 @@
 ---
 layout: index
-title: mqtt | magellan-cli-0.10 (ja) | Reference
-breadcrumb: <a href="/">Top</a> / <a href="/reference">Reference</a> / <a href="/reference/magellan-cli/ja">magellan-cli-0.10</a> / mqtt <a href="/reference/en/messaging/mqtt.html">en</a> ja
+title: mqtt | magellan-cli-0.11 (ja) | Reference
+breadcrumb: <a href="/">Top</a> / <a href="/reference">Reference</a> / <a href="/reference/magellan-cli/ja">magellan-cli-0.11</a> / mqtt <a href="/reference/en/messaging/mqtt.html">en</a> ja
 sidemenu: sidemenu/reference/magellan-cli/sidemenu-ja
 ---
 
