@@ -1,5 +1,7 @@
 # Magellan::Cli
 
+[![Gem Version](https://badge.fury.io/rb/magellan-cli.png)](https://rubygems.org/gems/magellan-cli) [![Build Status](https://secure.travis-ci.org/tengine/magellan-cli.png)](https://travis-ci.org/tengine/magellan-cli)
+
 TODO: Write a gem description
 
 ## Installation
