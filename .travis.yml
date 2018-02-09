@@ -3,3 +3,9 @@ language: ruby
 rvm:
   - 2.3.6
 
+## https://docs.travis-ci.com/user/languages/ruby/#Dependency-Management
+# install:
+
+## https://docs.travis-ci.com/user/languages/ruby/#Default-Build-Script
+script:
+ - bundle exec rake spec
