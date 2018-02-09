@@ -1,3 +1,18 @@
+sudo: false
 language: ruby
 rvm:
-  - 2.1.1
+  - 2.3.6
+  - 2.4.3
+  - 2.5.0
+
+## https://docs.travis-ci.com/user/languages/ruby/#Dependency-Management
+# install:
+
+## https://docs.travis-ci.com/user/languages/ruby/#Default-Build-Script
+script:
+ - bundle exec rake spec
+
+matrix:
+  allow_failures:
+    - rvm: 2.4.3
+    - rvm: 2.5.0
