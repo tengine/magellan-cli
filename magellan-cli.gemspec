@@ -24,7 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "activesupport"
   spec.add_runtime_dependency "text-table", "~> 1.2.3"
   spec.add_runtime_dependency "i18n"
-  spec.add_runtime_dependency "psych", ">= 2.0.0", "<= 2.0.8"
   spec.add_runtime_dependency "libmagellan", "~> 0.2.4"
   spec.add_runtime_dependency "logger_pipe", "~> 0.3.1"
 
