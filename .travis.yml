@@ -1,4 +1,6 @@
-sudo: false
+# https://docs.travis-ci.com/user/reference/overview/
+dist: xenial
+
 language: ruby
 rvm:
   - 2.3.8
