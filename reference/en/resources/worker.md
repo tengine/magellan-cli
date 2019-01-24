@@ -1,7 +1,7 @@
 ---
 layout: index
 title: worker | magellan-cli-0.11 (en) | Reference
-breadcrumb: <a href="/">Top</a> / <a href="/reference">Reference</a> / <a href="/reference/magellan-cli/en">magellan-cli-0.11</a> / worker en <a href="/reference/ja/resources/worker.html">ja</a>
+breadcrumb: <a href="/">Top</a> / <a href="/reference">Reference</a> / <a href="/reference/magellan-cli/en">magellan-cli-0.11</a> / worker <a href="/reference/ja/resources/worker.html">ja</a> en
 sidemenu: sidemenu/reference/magellan-cli/sidemenu-en
 ---
 
