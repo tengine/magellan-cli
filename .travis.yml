@@ -1,9 +1,17 @@
-sudo: false
+# https://docs.travis-ci.com/user/reference/overview/
+dist: xenial
+
 language: ruby
 rvm:
-  - 2.3.6
-  - 2.4.3
-  - 2.5.0
+  - 2.3.8
+  - 2.4.5
+  - 2.5.3
+  - 2.6.0
+
+## https://docs.travis-ci.com/user/languages/ruby#bundler-20
+before_install:
+  - gem update --system
+  - gem install bundler
 
 ## https://docs.travis-ci.com/user/languages/ruby/#Dependency-Management
 # install:
@@ -12,7 +20,3 @@ rvm:
 script:
  - bundle exec rake spec
 
-matrix:
-  allow_failures:
-    - rvm: 2.4.3
-    - rvm: 2.5.0
